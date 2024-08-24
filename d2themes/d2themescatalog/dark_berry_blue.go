@@ -11,15 +11,15 @@ var DarkBerryBlue = d2themes.Theme{
 		B1: "#E5F3FF",
 		B2: "#BCDDFB",
 		B3: "#77AFE3",
-		B4: "#2353DD",
-		B5: "#0F36A7",
-		B6: "#102566",
+		B4: "#3363DD",
+		B5: "#1F46B7",
+		B6: "#203586",
 
 		AA2: "#DACEFB",
-		AA4: "#A162D3",
-		AA5: "#5639A5",
+		AA4: "#A169D3",
+		AA5: "#6649B5",
 
-		AB4: "#FFDEF1",
-		AB5: "#EA99C6",
+		AB4: "#9F7ED1",
+		AB5: "#BA69A6",
 	},
 }

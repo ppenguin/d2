@@ -553,6 +553,7 @@
           "height": 0
         },
         "style": {},
+        "iconStyle": {},
         "near_key": null,
         "shape": {
           "value": ""
@@ -584,6 +585,7 @@
             "height": 0
           },
           "style": {},
+          "iconStyle": {},
           "near_key": null,
           "shape": {
             "value": ""
@@ -597,6 +599,144 @@
       }
     ],
     "objects": [
+      {
+        "id": "x",
+        "id_val": "x",
+        "references": [
+          {
+            "key": {
+              "range": "d2/testdata/d2compiler/TestCompile/var_in_vars.d2,16:0:233-16:1:234",
+              "path": [
+                {
+                  "unquoted_string": {
+                    "range": "d2/testdata/d2compiler/TestCompile/var_in_vars.d2,16:0:233-16:1:234",
+                    "value": [
+                      {
+                        "string": "x",
+                        "raw_string": "x"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "key_path_index": 0,
+            "map_key_edge_index": -1
+          }
+        ],
+        "attributes": {
+          "label": {
+            "value": "Granny Smith"
+          },
+          "labelDimensions": {
+            "width": 0,
+            "height": 0
+          },
+          "style": {},
+          "iconStyle": {},
+          "near_key": null,
+          "shape": {
+            "value": "circle"
+          },
+          "direction": {
+            "value": ""
+          },
+          "constraint": null
+        },
+        "zIndex": 0
+      },
+      {
+        "id": "c",
+        "id_val": "c",
+        "references": [
+          {
+            "key": {
+              "range": "d2/testdata/d2compiler/TestCompile/var_in_vars.d2,17:0:245-17:1:246",
+              "path": [
+                {
+                  "unquoted_string": {
+                    "range": "d2/testdata/d2compiler/TestCompile/var_in_vars.d2,17:0:245-17:1:246",
+                    "value": [
+                      {
+                        "string": "c",
+                        "raw_string": "c"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "key_path_index": 0,
+            "map_key_edge_index": -1
+          }
+        ],
+        "attributes": {
+          "label": {
+            "value": "Rainier Cherry"
+          },
+          "labelDimensions": {
+            "width": 0,
+            "height": 0
+          },
+          "style": {},
+          "iconStyle": {},
+          "near_key": null,
+          "shape": {
+            "value": "circle"
+          },
+          "direction": {
+            "value": ""
+          },
+          "constraint": null
+        },
+        "zIndex": 0
+      },
+      {
+        "id": "sf",
+        "id_val": "sf",
+        "references": [
+          {
+            "key": {
+              "range": "d2/testdata/d2compiler/TestCompile/var_in_vars.d2,18:0:258-18:2:260",
+              "path": [
+                {
+                  "unquoted_string": {
+                    "range": "d2/testdata/d2compiler/TestCompile/var_in_vars.d2,18:0:258-18:2:260",
+                    "value": [
+                      {
+                        "string": "sf",
+                        "raw_string": "sf"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "key_path_index": 0,
+            "map_key_edge_index": -1
+          }
+        ],
+        "attributes": {
+          "label": {
+            "value": "sf"
+          },
+          "labelDimensions": {
+            "width": 0,
+            "height": 0
+          },
+          "style": {},
+          "iconStyle": {},
+          "near_key": null,
+          "shape": {
+            "value": "rectangle"
+          },
+          "direction": {
+            "value": ""
+          },
+          "constraint": null
+        },
+        "zIndex": 0
+      },
       {
         "id": "xx",
         "id_val": "xx",
@@ -651,6 +791,7 @@
             "height": 0
           },
           "style": {},
+          "iconStyle": {},
           "near_key": null,
           "shape": {
             "value": "circle"
@@ -716,144 +857,10 @@
             "height": 0
           },
           "style": {},
+          "iconStyle": {},
           "near_key": null,
           "shape": {
             "value": "circle"
-          },
-          "direction": {
-            "value": ""
-          },
-          "constraint": null
-        },
-        "zIndex": 0
-      },
-      {
-        "id": "x",
-        "id_val": "x",
-        "references": [
-          {
-            "key": {
-              "range": "d2/testdata/d2compiler/TestCompile/var_in_vars.d2,16:0:233-16:1:234",
-              "path": [
-                {
-                  "unquoted_string": {
-                    "range": "d2/testdata/d2compiler/TestCompile/var_in_vars.d2,16:0:233-16:1:234",
-                    "value": [
-                      {
-                        "string": "x",
-                        "raw_string": "x"
-                      }
-                    ]
-                  }
-                }
-              ]
-            },
-            "key_path_index": 0,
-            "map_key_edge_index": -1
-          }
-        ],
-        "attributes": {
-          "label": {
-            "value": "Granny Smith"
-          },
-          "labelDimensions": {
-            "width": 0,
-            "height": 0
-          },
-          "style": {},
-          "near_key": null,
-          "shape": {
-            "value": "circle"
-          },
-          "direction": {
-            "value": ""
-          },
-          "constraint": null
-        },
-        "zIndex": 0
-      },
-      {
-        "id": "c",
-        "id_val": "c",
-        "references": [
-          {
-            "key": {
-              "range": "d2/testdata/d2compiler/TestCompile/var_in_vars.d2,17:0:245-17:1:246",
-              "path": [
-                {
-                  "unquoted_string": {
-                    "range": "d2/testdata/d2compiler/TestCompile/var_in_vars.d2,17:0:245-17:1:246",
-                    "value": [
-                      {
-                        "string": "c",
-                        "raw_string": "c"
-                      }
-                    ]
-                  }
-                }
-              ]
-            },
-            "key_path_index": 0,
-            "map_key_edge_index": -1
-          }
-        ],
-        "attributes": {
-          "label": {
-            "value": "Rainier Cherry"
-          },
-          "labelDimensions": {
-            "width": 0,
-            "height": 0
-          },
-          "style": {},
-          "near_key": null,
-          "shape": {
-            "value": "circle"
-          },
-          "direction": {
-            "value": ""
-          },
-          "constraint": null
-        },
-        "zIndex": 0
-      },
-      {
-        "id": "sf",
-        "id_val": "sf",
-        "references": [
-          {
-            "key": {
-              "range": "d2/testdata/d2compiler/TestCompile/var_in_vars.d2,18:0:258-18:2:260",
-              "path": [
-                {
-                  "unquoted_string": {
-                    "range": "d2/testdata/d2compiler/TestCompile/var_in_vars.d2,18:0:258-18:2:260",
-                    "value": [
-                      {
-                        "string": "sf",
-                        "raw_string": "sf"
-                      }
-                    ]
-                  }
-                }
-              ]
-            },
-            "key_path_index": 0,
-            "map_key_edge_index": -1
-          }
-        ],
-        "attributes": {
-          "label": {
-            "value": "sf"
-          },
-          "labelDimensions": {
-            "width": 0,
-            "height": 0
-          },
-          "style": {},
-          "near_key": null,
-          "shape": {
-            "value": "rectangle"
           },
           "direction": {
             "value": ""

@@ -1,9 +1,11 @@
 package d2sequence
 
 import (
+	"cmp"
 	"errors"
 	"fmt"
 	"math"
+	"slices"
 	"sort"
 	"strconv"
 	"strings"
@@ -75,6 +77,13 @@ func getEdgeEarliestLineNum(e *d2graph.Edge) int {
 func newSequenceDiagram(objects []*d2graph.Object, messages []*d2graph.Edge) (*sequenceDiagram, error) {
 	var actors []*d2graph.Object
 	var groups []*d2graph.Object
+
+	slices.SortFunc(objects, func(a, b *d2graph.Object) int {
+		return cmp.Compare(getObjEarliestLineNum(a), getObjEarliestLineNum(b))
+	})
+	slices.SortFunc(messages, func(a, b *d2graph.Edge) int {
+		return cmp.Compare(getEdgeEarliestLineNum(a), getEdgeEarliestLineNum(b))
+	})
 
 	for _, obj := range objects {
 		if obj.IsSequenceDiagramGroup() {
@@ -175,7 +184,7 @@ func newSequenceDiagram(objects []*d2graph.Object, messages []*d2graph.Edge) (*s
 		if rankDiff != 0 {
 			distributedLabelWidth := float64(message.LabelDimensions.Width) / rankDiff
 			for rank := go2.IntMin(sd.objectRank[message.Src], sd.objectRank[message.Dst]); rank <= go2.IntMax(sd.objectRank[message.Src], sd.objectRank[message.Dst])-1; rank++ {
-				sd.actorXStep[rank] = math.Max(sd.actorXStep[rank], distributedLabelWidth+HORIZONTAL_PAD)
+				sd.actorXStep[rank] = math.Max(sd.actorXStep[rank], distributedLabelWidth+LABEL_HORIZONTAL_PAD)
 			}
 		} else {
 			// self edge
@@ -457,7 +466,12 @@ func (sd *sequenceDiagram) placeNotes() {
 
 		for _, msg := range sd.messages {
 			if sd.verticalIndices[msg.AbsID()] < verticalIndex {
-				y += sd.yStep + float64(msg.LabelDimensions.Height)
+				if msg.Src == msg.Dst {
+					// For self-messages, account for the full vertical space they occupy
+					y += sd.yStep + math.Max(float64(msg.LabelDimensions.Height), MIN_MESSAGE_DISTANCE)*1.5
+				} else {
+					y += sd.yStep + float64(msg.LabelDimensions.Height)
+				}
 			}
 		}
 		for _, otherNote := range sd.notes {

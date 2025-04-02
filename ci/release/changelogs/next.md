@@ -1,23 +1,47 @@
 #### Features 🚀
 
-- Vars: Variable definitions can now refer to other variables in the current scope [#2052](https://github.com/terrastruct/d2/pull/2052)
+- Icons: connections can include icons [#12](https://github.com/terrastruct/d2/issues/12)
+- Syntax: `suspend`/`unsuspend` to define models and instantiate them [#2394](https://github.com/terrastruct/d2/pull/2394)
+- Globs:
+  - support for filtering edges based on properties of endpoint nodes (e.g., `&src.style.fill: blue`) [#2395](https://github.com/terrastruct/d2/pull/2395)
+  - `level` filter implemented [#2473](https://github.com/terrastruct/d2/pull/2473)
+- Render:
+  - markdown, latex, and code can be used as object labels [#2204](https://github.com/terrastruct/d2/pull/2204)
+  - `shape: c4-person` to render a person shape like what the C4 model prescribes [#2397](https://github.com/terrastruct/d2/pull/2397)
+- Icons: border-radius should work on icon [#2409](https://github.com/terrastruct/d2/issues/2409)
+- Diagram legends are implemented [#2416](https://github.com/terrastruct/d2/pull/2416)
 
 #### Improvements 🧹
 
-- Sequence diagram: edge groups account for edge label heights [#2038](https://github.com/terrastruct/d2/pull/2038)
-- Sequence diagram: self-referential edges account for edge label heights [#2040](https://github.com/terrastruct/d2/pull/2040)
-- Sequence diagram: The spacing between self-referential edges and regular edges is uniform [#2043](https://github.com/terrastruct/d2/pull/2043)
-- Compiler: Error on multi-line labels in `sql_table` shapes [#2057](https://github.com/terrastruct/d2/pull/2057)
-- Sequence diagram: Image shape actors can use spans and notes [#2056](https://github.com/terrastruct/d2/issues/2056)
-- Themes [#2065](https://github.com/terrastruct/d2/pull/2065):
-  - new theme `Dark Berry Blue` (`205`), intended as dark variant of `Mixed Berry Blue` (`5`).
-  - changed id of `Dark Flagship Terrastruct` (`203`) to mirror the ID of `Flagship Terrastruct` (`3`), improving theme discoverability.
+- CLI:
+    - Support `validate` command. [#2415](https://github.com/terrastruct/d2/pull/2415)
+    - Watch mode ignores backup files (e.g. files created by certain editors like Helix). [#2131](https://github.com/terrastruct/d2/issues/2131)
+- Compiler:
+    - `link`s can be set to root path, e.g. `/xyz`. [#2357](https://github.com/terrastruct/d2/issues/2357)
+- Parser:
+    - impose max key length. It's almost certainly a mistake if an ID gets too long, e.g. missing quotes [#2465](https://github.com/terrastruct/d2/pull/2465)
+- Render:
+    - horizontal padding added for connection labels [#2461](https://github.com/terrastruct/d2/pull/2461)
 
 #### Bugfixes ⛑️
 
-- Sequence diagram: multi-line edge labels no longer can collide with other elements [#2049](https://github.com/terrastruct/d2/pull/2049)
-- Sequence diagram: long self-referential edge labels no longer can collide neighboring actors (or its own) lifeline edges [#2050](https://github.com/terrastruct/d2/pull/2050)
-- Globs: An edge case was fixed where globs used in edges were creating nodes when it shouldn't have [#2051](https://github.com/terrastruct/d2/pull/2051)
-- Render: Multi-line class labels/headers are rendered correctly [#2057](https://github.com/terrastruct/d2/pull/2057)
-- CLI: Watch mode uses correct backlinks (`_` usages) [#2058](https://github.com/terrastruct/d2/pull/2058)
-- Vars: Spread variables are inserted in place instead of appending to end of scope [#2062](https://github.com/terrastruct/d2/pull/2062)
+- Compiler:
+  - fixes panic when `sql_shape` shape value had mixed casing [#2349](https://github.com/terrastruct/d2/pull/2349)
+  - fixes panic when importing from a file with spread substitutions in `vars` [#2427](https://github.com/terrastruct/d2/pull/2427)
+  - fixes support for `center` in `d2-config` [#2360](https://github.com/terrastruct/d2/pull/2360)
+  - fixes panic when comment lines appear in arrays [#2378](https://github.com/terrastruct/d2/pull/2378)
+  - fixes inconsistencies when objects were double quoted [#2390](https://github.com/terrastruct/d2/pull/2390)
+  - fixes globs not applying to spread substitutions [#2426](https://github.com/terrastruct/d2/issues/2426)
+  - fixes panic when classes were mixed with layers incorrectly [#2448](https://github.com/terrastruct/d2/pull/2448)
+- Formatter:
+  - fixes substitutions in quotes surrounded by text [#2462](https://github.com/terrastruct/d2/pull/2462)
+- CLI: fetch and render remote images of mimetype octet-stream correctly [#2370](https://github.com/terrastruct/d2/pull/2370)
+- Composition:
+    - spread importing scenarios/steps was not inheriting correctly [#2460](https://github.com/terrastruct/d2/pull/2460)
+    - imported fields were not merging with current fields/edges [#2464](https://github.com/terrastruct/d2/pull/2464)
+- Markdown: fixes nested var substitutions not working [#2456](https://github.com/terrastruct/d2/pull/2456)
+- d2js: handle unicode characters [#2393](https://github.com/terrastruct/d2/pull/2393)
+
+---
+
+For the latest d2.js changes, see separate [changelog](https://github.com/terrastruct/d2/blob/master/d2js/js/CHANGELOG.md).
